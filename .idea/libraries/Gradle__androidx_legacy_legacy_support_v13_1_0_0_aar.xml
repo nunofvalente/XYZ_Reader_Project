@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.legacy:legacy-support-v13:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/legacy-support-v13-1.0.0.aar/dcfcac7a71d219e5b11f602812a49427/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/legacy-support-v13-1.0.0.aar/dcfcac7a71d219e5b11f602812a49427/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/legacy-support-v13-1.0.0.aar/b054d06e6d4323387830e130fae5d5ea/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/legacy-support-v13-1.0.0.aar/b054d06e6d4323387830e130fae5d5ea/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/legacy-support-v13-1.0.0.aar/b054d06e6d4323387830e130fae5d5ea/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.legacy/legacy-support-v13/1.0.0/7b70eb5cd68261a89ec5885cf5a808d8e571197e/legacy-support-v13-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
