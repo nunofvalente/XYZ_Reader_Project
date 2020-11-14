@@ -46,4 +46,7 @@ dependencies {
     implementation files('libs/volley.jar')
 
     implementation 'com.google.android.material:material:1.2.1'
+
+    //Collapsed Toolbar
+    implementation "com.hendraanggrian.material:collapsingtoolbarlayout-subtitle:1.1.0"
 }

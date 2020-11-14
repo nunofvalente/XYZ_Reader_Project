@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hendraanggrian.material:collapsingtoolbarlayout-subtitle:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsingtoolbarlayout-subtitle-1.1.0.aar/c6ca8d85af49797e32a3a107bc01c419/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsingtoolbarlayout-subtitle-1.1.0.aar/c6ca8d85af49797e32a3a107bc01c419/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/collapsingtoolbarlayout-subtitle-1.1.0.aar/c6ca8d85af49797e32a3a107bc01c419/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hendraanggrian.material/collapsingtoolbarlayout-subtitle/1.1.0/da42ecbb5a34c332899f449b6f81e709826a940d/collapsingtoolbarlayout-subtitle-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

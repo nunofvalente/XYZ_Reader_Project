@@ -10,14 +10,13 @@
         android:layout_height="@dimen/app_bar_details_height"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:fitsSystemWindows="true"
+        android:elevation="@dimen/app_bar_elevation"
         android:background="@color/theme_primary">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <com.google.android.material.appbar.SubtitleCollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             >
 
@@ -42,7 +41,7 @@
                 app:layout_collapseMode="pin"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.SubtitleCollapsingToolbarLayout>>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -54,6 +53,7 @@
     </FrameLayout>
 
     <ImageButton android:id="@+id/share_fab"
+        android:stateListAnimator="@animator/fab_state_list_anim"
         android:background="@drawable/add_fab_background"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
@@ -61,6 +61,7 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/ic_share"
+        android:elevation="@dimen/fab_elevation"
         android:contentDescription="@string/action_share" />
 
     <androidx.core.widget.NestedScrollView
