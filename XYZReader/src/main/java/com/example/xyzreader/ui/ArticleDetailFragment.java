@@ -140,17 +140,14 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        mToolbar.setNavigationOnClickListener(view -> getActivityCast().onBackPressed());
+
         AppBarLayout appBarLayout = mRootView.findViewById(R.id.app_bar_details);
         appBarLayout.addOnOffsetChangedListener((appBarLayout1, verticalOffset) -> {
             if (Math.abs(verticalOffset) == appBarLayout1.getTotalScrollRange()) {
-                IS_COLLAPSED = true;
                 mToolbar.setVisibility(View.VISIBLE);
-                mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-                mToolbar.setNavigationOnClickListener(view -> getActivityCast().onBackPressed());
             } else if (verticalOffset == 0) {
-                IS_COLLAPSED = false;
-                mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-                mToolbar.setNavigationOnClickListener(view -> getActivityCast().onBackPressed());
                 mToolbar.setVisibility(View.INVISIBLE);
             }
         });
@@ -276,7 +273,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     static class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
 
-        private ArrayList<String> paragraphs = new ArrayList<>();
+        private final ArrayList<String> paragraphs;
 
         public MyRecyclerAdapter(ArrayList<String> articleBody) {
             this.paragraphs = articleBody;
@@ -293,7 +290,7 @@ public class ArticleDetailFragment extends Fragment implements
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             String paragraph = paragraphs.get(position);
-            holder.mParagraph.append(paragraph);
+            holder.mParagraph.setText(paragraph);
         }
 
         @Override
