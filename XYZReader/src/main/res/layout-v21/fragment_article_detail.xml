@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_anchor="@+id/frameLayout"
-        android:layout_margin="@dimen/margin_8dp"
+        android:layout_margin="@dimen/margin_article_body"
         app:layout_anchorGravity="center">
 
         <androidx.recyclerview.widget.RecyclerView

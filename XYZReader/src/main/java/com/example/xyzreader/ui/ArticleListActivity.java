@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -134,10 +135,18 @@ public class ArticleListActivity extends AppCompatActivity implements
         Adapter adapter = new Adapter(cursor);
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);
-        int columnCount = getResources().getInteger(R.integer.list_column_count);
-        GridLayoutManager sglm =
-                new GridLayoutManager(this, columnCount);
-        mRecyclerView.setLayoutManager(sglm);
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            int columnCount = getResources().getInteger(R.integer.list_column_count_landscape);
+            GridLayoutManager sglm =
+                    new GridLayoutManager(this, columnCount);
+            mRecyclerView.setLayoutManager(sglm);
+        } else {
+            int columnCount = getResources().getInteger(R.integer.list_column_count);
+            GridLayoutManager sglm =
+                    new GridLayoutManager(this, columnCount);
+            mRecyclerView.setLayoutManager(sglm);
+        }
     }
 
     @Override

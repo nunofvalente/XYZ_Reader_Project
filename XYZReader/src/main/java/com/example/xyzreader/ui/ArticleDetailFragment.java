@@ -284,7 +284,7 @@ public class ArticleDetailFragment extends Fragment implements
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             String paragraph = paragraphs[position];
-            holder.mParagraph.setText(paragraph.replace("(\r\n\r\n|\n\n)", "<br /><br />"));
+            holder.mParagraph.setText(paragraph.replace("(\r\n|\n)", "<br />"));
         }
 
         @Override

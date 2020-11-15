@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:transitionName="@string/image_transition"
             android:background="@color/photo_placeholder" />
 
         <TextView
@@ -33,6 +32,7 @@
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="4dp"
+            android:textSize="@dimen/grid_article_title"
             android:textColor="@color/ltgray"
             android:ellipsize="end"
             android:maxLines="4" />
@@ -45,6 +45,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="16dp"
+            android:textSize="@dimen/grid_article_body"
             android:textColor="#6000"
             android:maxLines="2"
             android:ellipsize="end" />

@@ -1,8 +1,11 @@
 <resources>
     <!-- detail -->
     <dimen name="detail_title_text_size">42sp</dimen>
-    <dimen name="detail_body_text_size">20sp</dimen>
+    <dimen name="detail_body_text_size">32sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.3</item>
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="image_detail_size">450dp</dimen>
+    <dimen name="grid_article_title">24sp</dimen>
+    <dimen name="grid_article_body">16sp</dimen>
+    <dimen name="margin_article_body">32dp</dimen>
 </resources>
