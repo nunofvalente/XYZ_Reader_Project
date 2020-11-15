@@ -55,7 +55,6 @@ public class ArticleDetailFragment extends Fragment implements
 
     public static final String ARG_ITEM_ID = "item_id";
     private static final float PARALLAX_FACTOR = 1.25f;
-    private static boolean IS_COLLAPSED = false;
 
     private Cursor mCursor;
     private long mItemId;
@@ -190,18 +189,18 @@ public class ArticleDetailFragment extends Fragment implements
 
                     } else {
                         // If date is before 1902, just show the string
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             mCollapsedToolbar.setSubtitle(Html.fromHtml(
                                     outputFormat.format(publishedDate) + " by <font color='#000000'>"
                                             + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                             + "</font>"));
                         }
                     }
-                }
 
-                String body = mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />");
-                ArrayList<String> mBodyList = createArrayFromString(body);
-                setRecyclerView(mBodyList);
+        String body = null;
+        if (mCursor != null) {
+            body = mCursor.getString(ArticleLoader.Query.BODY);
+        }
+        setRecyclerView(body);
 
                 ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                         .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
@@ -225,17 +224,12 @@ public class ArticleDetailFragment extends Fragment implements
             }
     }
 
-    private ArrayList<String> createArrayFromString(String body) {
-        String[] paragraphs = body.split("<br />");
-
-        return new ArrayList<>(Arrays.asList(paragraphs));
-    }
-
-    private void setRecyclerView(ArrayList<String> body) {
+    private void setRecyclerView(String body) {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivityCast());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         MyRecyclerAdapter adapter = new MyRecyclerAdapter(body);
+        adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
     }
 
@@ -273,10 +267,10 @@ public class ArticleDetailFragment extends Fragment implements
 
     static class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.MyViewHolder> {
 
-        private final ArrayList<String> paragraphs;
+        private final String[] paragraphs;
 
-        public MyRecyclerAdapter(ArrayList<String> articleBody) {
-            this.paragraphs = articleBody;
+        public MyRecyclerAdapter(String articleBody) {
+            this.paragraphs = articleBody.split("\\r\\n\\r\\n");
         }
 
         @NonNull
@@ -289,13 +283,13 @@ public class ArticleDetailFragment extends Fragment implements
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            String paragraph = paragraphs.get(position);
-            holder.mParagraph.setText(paragraph);
+            String paragraph = paragraphs[position];
+            holder.mParagraph.setText(paragraph.replace("(\r\n\r\n|\n\n)", "<br /><br />"));
         }
 
         @Override
         public int getItemCount() {
-            return paragraphs.size();
+            return paragraphs.length;
         }
 
         public static class MyViewHolder extends RecyclerView.ViewHolder {
